@@ -6,7 +6,9 @@ This project is bootstrapped with [`create-next-app`]
 
 ## Getting Started
 
-First, run the development server:
+Rename `.env.example` to `.env`
+
+Run the development server:
 
 ```bash
 npm run dev
