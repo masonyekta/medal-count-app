@@ -38,7 +38,7 @@ const MedalHeader = () => {
 			))}
 			<button
 				onClick={() => handleSortClick('total')}
-				className={`text-center text-sm text-gray-600 font-medium cursor-pointer ${
+				className={`text-center text-xs sm:text-sm text-gray-600 font-medium cursor-pointer ${
 					currentSort === 'total' ? 'border-t-1 border-gray-950' : ''
 				}`}
 				aria-label="Sort by total medals"

@@ -4,6 +4,8 @@ This is a simple medal count app created with Next.js. User is able to sort the 
 
 This project is bootstrapped with [`create-next-app`]
 
+![Preview](https://i.imgur.com/52lj14D.png)
+
 ## Getting Started
 
 Rename `.env.example` to `.env`
