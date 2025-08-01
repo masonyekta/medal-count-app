@@ -5,9 +5,14 @@ import type { MedalData, MedalResult } from '@/types/medals'
  * If no parameter is provided, sort by gold medals
  * @param medals
  * @param sort
+ * @param limit
  * @returns sortedMedals
  */
-export function getMedals(medals: MedalData[], sort: string = 'gold'): MedalResult[] {
+export function getMedals(
+	medals: MedalData[],
+	sort: string = 'gold',
+	limit: number = 10
+): MedalResult[] {
 	const olympicCompare = (a: MedalResult, b: MedalResult): number => {
 		return b.gold - a.gold || b.silver - a.silver || b.bronze - a.bronze
 	}
@@ -40,7 +45,7 @@ export function getMedals(medals: MedalData[], sort: string = 'gold'): MedalResu
 		medal.rank = index + 1
 	})
 
-	return sortedMedals
+	return sortedMedals.slice(0, limit)
 }
 
 /**

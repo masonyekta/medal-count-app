@@ -15,8 +15,8 @@ const MedalTable = ({ medalData }: MedalTableProps) => {
 	const searchParams = useSearchParams()
 	const sort = searchParams.get('sort') ?? 'gold'
 
-	// Get medal data with rank, only top 10
-	const medalDataWithRank = getMedals(medalData, sort).slice(0, 10)
+	// Get medal data with rank
+	const medalDataWithRank = getMedals(medalData, sort)
 
 	if (medalData.length === 0) return <ErrorMessage />
 
@@ -31,12 +31,11 @@ const MedalTable = ({ medalData }: MedalTableProps) => {
 							key={country.code}
 							className="grid grid-cols-7 gap-4 py-2 items-center"
 						>
-							<div className="col-span-2 flex items-center gap-2 text-gray-800 font-medium">
+							<div className="col-span-3 flex items-center gap-2 text-gray-800 font-medium">
 								<span className="w-6 text-center">{country.rank}</span>
 								<CountryFlag countryCode={country.code} />
 								<span className="ml-2">{country.code}</span>
 							</div>
-							<div />
 							<div className="text-center text-gray-800 font-medium">
 								{country.gold}
 							</div>
